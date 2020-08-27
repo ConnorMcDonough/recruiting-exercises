@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    
+    <style>
+        p{ padding: 0; margin: 0; }
+    </style>
+    
+    <body>
+
+        <h2>Deliverr recruiting exercise</h2>
+
+        <p>This program computes the best way an order can be shipped given inventory across a set of warehouses:</p>
+
+
+        <br>
+        <p><b>Unit Test 1 - Happy case</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":5}, [{"name":"owd","inventory":{"apple":5}}]</p>
+        <p><b>Expected: </b>[{ owd: { apple: 5 } }]</p>
+        <p id="unitTest1"></p>
+        <br>
+        <p><b>Unit Test 2 - Simple split across warehouses</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":10}, [{"name":"owd","inventory":{"apple":5}},{"name":"dm","inventory":{"apple":5}}]</p>
+        <p><b>Expected: </b>[{ owd: { apple: 5 } }, { dm: { apple: 5 } }]</p>
+        <p id="unitTest2"></p>
+        <br>
+        <p><b>Unit Test 3 - Not enough inventory at first warehouse, goes to second (Shipping from one)</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":5,"banana":5,"orange":5}, [{"name":"owd","inventory":{"apple":5,"orange":5,"banana":2}},{"name":"dm","inventory":{"banana":5}}]</p>
+        <p><b>Expected: </b>[{ owd: { apple: 5 } }, { dm: { banana: 5 } }, { owd: { orange: 5 } }]</p>
+        <p id="unitTest3"></p>
+        <br>
+        <p><b>Unit Test 4 - Complex split from warehouses</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":5,"banana":10,"orange":5}, [{"name":"owd","inventory":{"apple":5,"orange":3,"banana":1}},{"name":"dm","inventory":{"banana":9,"orange":6}}]</p>
+        <p><b>Expected: </b>[{ owd: { apple: 5 } }, { owd: { banana: 1 } }, { dm: { banana: 9 } }, { dm: { orange: 5 } }]</p>
+        <p id="unitTest4"></p>
+        <br>
+        <p><b>Unit Test 5 - Complex split from warehouses AND not enough inventory at first/Second warehouse AND three warehouses</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":5,"banana":5,"orange":5,"pineapple":6}, [{"name":"owd","inventory":{"apple":5,"orange":5,"banana":2,"pineapple":2}},{"name":"dm","inventory":{"banana":5,"pineapple":2}},{"name":"cam","inventory":{"banana":5,"pineapple":2}}]</p>
+        <p><b>Expected: </b>[{ owd: { apple: 5 } }, { dm: { banana: 5 } }, { owd: { orange: 5 } }, { owd: { pineapple: 2 } }, { dm: { pineapple: 2 } }, { cam: { pineapple: 2 } }]</p>
+        <p id="unitTest5"></p>
+        <br>
+        <p><b>Unit Test 6 - Simple not enough inventory</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":10}, [{"name":"owd","inventory":{"apple":4}}]</p>
+        <p><b>Expected: </b>[]</p>
+        <p id="unitTest6"></p>
+        <br>
+        <p><b>Unit Test 7 - Order not at any stores</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":10,"banana":10}, [{"name":"owd","inventory":{"pear":4}},{"name":"dm","inventory":{"orange":4}}]</p>
+        <p><b>Expected: </b>[]</p>
+        <p id="unitTest7"></p>
+        <br>
+        <p><b>Unit Test 8 - No warehouses</b></p>
+        <br>
+        <p><b>Input: </b>{"apple":10,"banana":10}, []</p>
+        <p><b>Expected: </b>[]</p>
+        <p id="unitTest8"></p>
+        <br>
+        <p><b>Unit Test 9 - No order</b></p>
+        <br>
+        <p><b>Input: </b>{}, [{"name":"owd","inventory":{"pear":4}},{"name":"dm","inventory":{"orange":4}}]</p>
+        <p><b>Expected: </b>[]</p>
+        <p id="unitTest9"></p>
+
+    </body>
+    <script src="InventoryAllocator.js"></script>
+
+</html>

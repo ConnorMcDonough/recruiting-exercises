@@ -1,0 +1,1 @@
+To run just open the index.html file with the InventoryAllocator.js in the same directory
